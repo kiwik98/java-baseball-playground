@@ -1,7 +1,5 @@
 package baseball.viewer;
 
-import baseball.domain.Score;
-
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -10,14 +8,6 @@ public class ConsoleMessageViewer implements MessageViewer {
     public void read() {
         final String readMessage = "숫자를 입력해 주세요 : ";
         System.out.print(readMessage);
-    }
-
-    @Override
-    public void score(final Score score) {
-        final int ballScore = score.getBallScore();
-        final int strikeScore = score.getStrikeScore();
-        final String scoreMessage = getScoreMessage(ballScore, strikeScore);
-        printMessage(scoreMessage);
     }
 
     @Override
@@ -51,22 +41,5 @@ public class ConsoleMessageViewer implements MessageViewer {
         System.out.println(message);
     }
 
-    private String getScoreMessage(final int ballScore, final int strikeScore) {
-        String scoreMessage = "";
-
-        if(ballScore < 1 && strikeScore < 1) {
-            return"낫싱";
-        }
-
-        if(ballScore > 0) {
-            scoreMessage += String.format("%d볼 ", ballScore);
-        }
-
-        if (strikeScore > 0) {
-            scoreMessage += String.format("%d스트라이크", strikeScore);
-        }
-
-        return scoreMessage;
-    }
 
 }

@@ -37,7 +37,7 @@ public class ConsoleController {
             final String ballRequest = getBallRequest();
             score = opponent.giveScore(ballRequest);
             isSolved = score.isSolved();
-            messageViewer.score(score);
+            statePrinter.displayGameStatus(score);
         }while(!isSolved);
 
         if(isSolved) {
