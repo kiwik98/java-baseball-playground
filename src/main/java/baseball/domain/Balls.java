@@ -1,9 +1,9 @@
 package baseball.domain;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class Balls {
 
@@ -15,51 +15,28 @@ public class Balls {
     }
 
     private List<Ball> createBalls() {
-        List<Ball> ballList = new ArrayList<>();
-        boolean isValid = false;
-
-        while (!isValid) {
-            ballList = makeBalls();
-            isValid = isValidBalls(ballList);
-        }
-
+        List<Ball> ballList = makeBalls();
         return ballList;
     }
 
-    private  List<Ball> makeBalls() {
+    private List<Ball> makeBalls() {
         List<Ball> ballList = new ArrayList<>();
-        for(int ballCount = 0; ballCount < BALLS_SIZE; ballCount++) {
-            Ball ball = new Ball();
-            ballList.add(ball.createBall());
+        Set<String> usedNumbers = new HashSet<>(); // 중복 체크를 위한 Set
+
+        while (ballList.size() < BALLS_SIZE) {
+            createNotDuplicateBalls(ballList, usedNumbers);
         }
         return ballList;
     }
 
-    private boolean isValidBalls(List<Ball> balls) {
-        boolean isValidBallSize = isValidBallSize(balls);
-        boolean isValidDuplicatedNumbers = isValidDuplicatedNumbers(balls);
+    private void createNotDuplicateBalls(List<Ball> ballList, Set<String> usedNumbers) {
+        Ball ball = new Ball().createBall();
+        String number = ball.getNumber();
 
-        if(isValidBallSize && isValidDuplicatedNumbers){
-            return true;
+        if (!usedNumbers.contains(number)) {
+            ballList.add(ball);
+            usedNumbers.add(number);
         }
-        return false;
-    }
-
-    private boolean isValidBallSize(List<Ball> balls) {
-        if (balls.size() != BALLS_SIZE) {
-            return false;
-        }
-        return true;
-    }
-
-    private boolean isValidDuplicatedNumbers(List<Ball> balls) {
-        Set<String> ballSet = balls.stream()
-                .map(Ball::getNumber)
-                .collect(Collectors.toSet());
-        if (ballSet.size() != BALLS_SIZE) {
-            return false;
-        }
-        return true;
     }
 
     public String getAnswer() {

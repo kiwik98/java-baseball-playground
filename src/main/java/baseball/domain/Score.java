@@ -21,11 +21,12 @@ public class Score {
     private int ballCount(String answer, String solve) {
         int count = 0;
         for (int i = 0; i < answer.length(); i++) {
-            for(int j = 0; j < solve.length(); j++) {
-                if(answer.charAt(i) == solve.charAt(j)) count++;
+            if(answer.charAt(i) != solve.charAt(i)
+                    && answer.contains(String.valueOf(solve.charAt(i)))) {
+                count++;
             }
         }
-        return count - this.strikeScore;
+        return count;
     }
 
     public int getStrikeScore() {

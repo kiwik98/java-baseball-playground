@@ -22,20 +22,8 @@ public class Ball {
 
     private int createNumber() {
         Random random = new Random();
-        boolean validNumber = false;
-        int num = 0;
-        while (!validNumber) {
-            num = random.nextInt(MAX_NUMBER);
-            validNumber = isValidNumber(num);
-        }
+        int num = random.nextInt(MAX_NUMBER-1) + MIN_NUMBER; // (0~8)+1 = 1~9 랜덤 숫자
         return num;
-    }
-
-    private boolean isValidNumber(int number) {
-        if (number >= MIN_NUMBER && number <= MAX_NUMBER) {
-            return true;
-        }
-        return false;
     }
 
     public String getNumber() {
