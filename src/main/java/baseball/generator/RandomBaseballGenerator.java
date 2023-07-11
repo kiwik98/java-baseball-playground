@@ -8,9 +8,6 @@ import java.util.List;
 
 public class RandomBaseballGenerator implements RandomBallGenerator {
 
-
-    public static final int MAX_NUMBER = 9;
-
     @Override
     public List<Baseball> generate() {
         List<Baseball> baseballs = new ArrayList<>();
