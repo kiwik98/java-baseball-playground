@@ -15,4 +15,12 @@ public class Baseballs {
     public List<Baseball> getBalls() {
         return balls;
     }
+
+    public String getBallNumbers() {
+        StringBuilder numbers = new StringBuilder();
+        for(Baseball ball : balls) {
+            numbers.append(ball.getBallNumber());
+        }
+        return String.valueOf(numbers);
+    }
 }
