@@ -16,8 +16,11 @@ class BaseballsTest {
     @Test
     void 볼_생성() {
         Baseballs balls = new Baseballs();
+
         assertThat(balls.getBalls()).isNull();
+
         balls.generateBalls(new RandomBaseballGenerator());
+
         assertThat(balls.getBalls()).isNotNull();
     }
 
