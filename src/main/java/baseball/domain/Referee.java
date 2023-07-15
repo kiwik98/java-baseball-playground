@@ -8,7 +8,6 @@ public class Referee {
 
 
     public BaseballCount judge(final Baseballs computerBall, final Baseballs inputBall) {
-
         String comNumber = computerBall.getBallNumbers();
         String inputNumber = inputBall.getBallNumbers();
 
@@ -34,7 +33,6 @@ public class Referee {
 
 
     private int ball(final String comNumber, final String inputNumber, int i) {
-
         if(GameResult.isBall(comNumber, inputNumber, i) == BaseballStatus.BALL) {
             return 1;
         }

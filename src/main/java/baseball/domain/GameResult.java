@@ -5,7 +5,6 @@ import baseball.domain.enums.BaseballStatus;
 public class GameResult {
 
     public static BaseballStatus isStrike(String comNumber, String inputNumber, int i) {
-
         return comNumber.charAt(i) == inputNumber.charAt(i) ? BaseballStatus.STRIKE : BaseballStatus.NOTHING;
     }
 

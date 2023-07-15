@@ -4,10 +4,10 @@ import java.util.Objects;
 
 public class Baseball {
 
-    private int position;
-    private int ballNumber;
+    private final int position;
+    private final int ballNumber;
 
-    public Baseball(int position, int ballNumber) {
+    public Baseball(final int position, final int ballNumber) {
         this.position = position;
         this.ballNumber = ballNumber;
     }
