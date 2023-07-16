@@ -28,4 +28,10 @@ class GameResultTest {
         boolean result = GameResult.isFairResult(new BaseballCount(1, 1));
         assertThat(result).isTrue();
     }
+
+    @Test
+    void isThreeStrike() {
+        boolean result = GameResult.isThreeStrike(new BaseballCount(3, 0));
+        assertThat(result).isTrue();
+    }
 }
