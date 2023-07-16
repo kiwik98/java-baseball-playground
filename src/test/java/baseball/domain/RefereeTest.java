@@ -21,8 +21,8 @@ public class RefereeTest {
     @Test
     void 낫싱() {
         //given
-        computerBalls.generateBalls(new InputBaseballGenerator(1,2,3));
-        inputBalls.generateBalls(new InputBaseballGenerator(4,5,6));
+        computerBalls.generateBalls(new InputBaseballGenerator("123"));
+        inputBalls.generateBalls(new InputBaseballGenerator("456"));
         BaseballCount nothingResult = new BaseballCount(0, 0);
         //when
         BaseballCount judgeResult = referee.judge(computerBalls, inputBalls);
@@ -34,8 +34,8 @@ public class RefereeTest {
     @Test
     void 원_볼() {
         //given
-        computerBalls.generateBalls(new InputBaseballGenerator(1,2,3));
-        inputBalls.generateBalls(new InputBaseballGenerator(3,5,6));
+        computerBalls.generateBalls(new InputBaseballGenerator("123"));
+        inputBalls.generateBalls(new InputBaseballGenerator("356"));
         BaseballCount nothingResult = new BaseballCount(0, 1);
         //when
         BaseballCount judgeResult = referee.judge(computerBalls, inputBalls);
@@ -47,8 +47,8 @@ public class RefereeTest {
     @Test
     void 원_스트라이크() {
         //given
-        computerBalls.generateBalls(new InputBaseballGenerator(1,2,3));
-        inputBalls.generateBalls(new InputBaseballGenerator(1,5,6));
+        computerBalls.generateBalls(new InputBaseballGenerator("123"));
+        inputBalls.generateBalls(new InputBaseballGenerator("156"));
         BaseballCount nothingResult = new BaseballCount(1, 0);
         //when
         BaseballCount judgeResult = referee.judge(computerBalls, inputBalls);
@@ -60,8 +60,8 @@ public class RefereeTest {
     @Test
     void 원_볼_원_스트라이크() {
         //given
-        computerBalls.generateBalls(new InputBaseballGenerator(1,2,3));
-        inputBalls.generateBalls(new InputBaseballGenerator(1,3,6));
+        computerBalls.generateBalls(new InputBaseballGenerator("123"));
+        inputBalls.generateBalls(new InputBaseballGenerator("136"));
         BaseballCount nothingResult = new BaseballCount(1, 1);
         //when
         BaseballCount judgeResult = referee.judge(computerBalls, inputBalls);

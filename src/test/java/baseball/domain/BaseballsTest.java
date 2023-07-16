@@ -29,7 +29,7 @@ class BaseballsTest {
         //given
         Baseballs baseballs = new Baseballs();
         //when
-        baseballs.generateBalls(new InputBaseballGenerator(1, 2, 3));
+        baseballs.generateBalls(new InputBaseballGenerator("123"));
         List<Baseball> balls = baseballs.getBalls();
         List<Baseball> expectedBalls = IntStream.range(0, 3)
                 .mapToObj(i -> new Baseball(i + 1, i + 1))
