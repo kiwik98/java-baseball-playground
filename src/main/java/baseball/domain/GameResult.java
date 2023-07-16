@@ -31,4 +31,8 @@ public class GameResult {
     public static boolean isFairResult(BaseballCount ballCount) {
         return ballCount.getStrike() > 0 && ballCount.getBall() > 0;
     }
+
+    public static boolean isThreeStrike(BaseballCount ballCount) {
+        return ballCount.getStrike() == 3;
+    }
 }
