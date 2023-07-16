@@ -8,11 +8,12 @@ import java.io.IOException;
 public class BaseballConsoleInputHandler extends ConsoleInputHandler {
 
     @Override
-    public BallRequest solve() {
+    public String solve() {
         String numbers;
         try {
             numbers = bufferedReader.readLine();
-            return new BallRequest(numbers);
+            BallRequest request = new BallRequest(numbers);
+            return request.getRequest();
         } catch (final IOException e) {
             throw new RuntimeException("잘못된 입력입니다.");
         }
