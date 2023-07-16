@@ -12,7 +12,7 @@ public class BallRequest {
         if(isValidInput()) {
             return numbers;
         }else {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("유효하지 않은 입력 값입니다.");
         }
     }
 
