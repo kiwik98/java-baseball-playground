@@ -5,6 +5,7 @@ import baseball.domain.Baseballs;
 import baseball.domain.GameResult;
 import baseball.domain.Referee;
 import baseball.generator.InputBaseballGenerator;
+import baseball.generator.RandomBaseballGenerator;
 import baseball.handler.BaseballConsoleInputHandler;
 import baseball.printer.BaseballStatePrinter;
 import baseball.viewer.BaseballMessageViewer;
@@ -32,7 +33,7 @@ public class BaseballProgressor {
         Baseballs user = new Baseballs();
         Referee referee = new Referee();
         BaseballCount count;
-        computer.generateBalls(new InputBaseballGenerator("123"));
+        computer.generateBalls(new RandomBaseballGenerator());
         do {
             MESSAGE_VIEWER.read();
             String request = INPUT_HANDLER.solve();
