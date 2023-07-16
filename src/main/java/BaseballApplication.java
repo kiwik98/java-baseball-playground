@@ -1,13 +1,8 @@
-import baseball.handler.BaseballConsoleInputHandler;
-import baseball.request.BallRequest;
+import baseball.progressor.BaseballProgressor;
 
 public class BaseballApplication {
     public static void main(String[] args) {
-
-        BaseballConsoleInputHandler input = new BaseballConsoleInputHandler();
-
-        BallRequest request = input.solve();
-
-        System.out.println("request: " + request.getRequest());
+        BaseballProgressor baseballProgressor = new BaseballProgressor();
+        baseballProgressor.run();
     }
 }

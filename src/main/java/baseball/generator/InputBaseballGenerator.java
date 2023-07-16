@@ -12,7 +12,6 @@ public class InputBaseballGenerator implements BallGenerator {
     private final List<Integer> numbers;
 
     public InputBaseballGenerator(String numbers) {
-
         List<Integer> result = new ArrayList<>();
         String[] chars = numbers.split("");
         for(String s : chars) {
