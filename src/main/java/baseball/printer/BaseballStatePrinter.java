@@ -12,11 +12,11 @@ public class BaseballStatePrinter implements ConsoleStatePrinter<BaseballCount> 
         }
 
         if(GameResult.isOnlyStrike(ballCount)) {
-            System.out.println(String.format("%d볼", ballCount.getBall()));
+            System.out.println(String.format("%d스트라이크", ballCount.getStrike()));
         }
 
         if(GameResult.isOnlyBall(ballCount)) {
-            System.out.println(String.format("%d스트라이크", ballCount.getStrike()));
+            System.out.println(String.format("%d볼", ballCount.getBall()));
         }
 
         if(GameResult.isFairResult(ballCount)) {
